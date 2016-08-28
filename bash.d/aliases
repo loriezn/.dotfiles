@@ -9,14 +9,33 @@ alias x='exit'
 alias q='exit'
 alias i='sudo -i'
 alias refresh='xrandr --output eDP1 --mode 1920x1080 --auto'
+
 # git
 alias g='git'
 alias gs='git status';
 
-ga() { if [ "$1" != "" ]; then git add "$1" else git add ./* ; fi ; }
-gm() { if "$1" != "" ]; then git commit -m "$1" else git commit -m "updates" ; fi ; }
-gr() { if [ "$1" == all ]; then git rm ./* else git rm "$1" ; fi ; }
-gc() { git clone https://github.com/affinityskin/"$1" ; }
+ga() { 
+	if [ "$1" != "" ]; then 
+		git add "$1" else git add ./* 
+	fi 
+}
+gm() { 
+	if [ "$1" != "" ]; then 
+		git commit -m "$1" 
+	else 
+		git commit -m "updates" 
+	fi 
+}
+gr() { 
+	if [ "$1" == all ]; then 
+		git checkout -- ./* 
+	else 
+		git checkout -- "$1" 
+	fi 
+}
+gc() { 
+	git clone https://github.com/affinityskin/"$1" 
+}
 
 # apt-get
 alias update='sudo apt-get update'
@@ -31,7 +50,7 @@ alias search='apt-cache search'
 
 # nano
 alias xapt='sudo nano /etc/apt/sources.list'
-alias xaliases='nano ~/.build-scripts/dotfiles/.bash.d/bash_aliases && echo "reloading bash" && source ~/.bashrc'
+alias xaliases='nano ~/.dotfiles/bash.d/aliases && echo "reloading bash" && source ~/.bashrc'
 alias nanorc='sudo nano /etc/nanorc'
 alias sshd='sudo nano /etc/ssh/sshd_config && echo "restarting sshd" && sleep 2 && sudo service ssh restart'
 alias xkeys='nano ~/.ssh/authorized_keys'
@@ -81,10 +100,10 @@ alias ntest='nginx -t'
 alias nreload='sudo service nginx reload'
 alias nstop='sudo service nginx stop'
 alias nsstart='sudo service nginx start'
-alias sigma='ssh -p 221 loki@192.168.0.21'
-
-
 alias ipwan='curl ifconfig.me/ip'
+
+# SSH Locations
+alias psi='TERM=xterm ssh loki@192.168.0.10'
 alias sigma='TERM=xterm ssh -p 160 loki@ts.loginto.me'
 alias proxima='TERM=xterm ssh -p 200 loki@ts.loginto.me'
 alias omega='TERM=xterm ssh -p 250 root@ts.loginto.me'
