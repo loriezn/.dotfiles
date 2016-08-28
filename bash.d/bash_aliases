@@ -1,0 +1,93 @@
+#!/bin/bash
+# Shortcuts
+alias ll='ls -lh'
+alias la='ls -lhA'
+alias l='clear'
+alias cls='clear'
+alias c='clear'
+alias x='exit'
+alias q='exit'
+alias i='sudo -i'
+alias refresh='xrandr --output eDP1 --mode 1920x1080 --auto'
+# git
+alias g='git'
+alias gs='git status';
+
+ga() { if [ "$1" != "" ]; then git add "$1" else git add ./* ; fi ; }
+gm() { if "$1" != "" ]; then git commit -m "$1" else git commit -m "updates" ; fi ; }
+gr() { if [ "$1" == all ]; then git rm ./* else git rm "$1" ; fi ; }
+gc() { git clone https://github.com/affinityskin/"$1" ; }
+
+# apt-get
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade -y'
+alias dist-upgrade='sudo apt-get dist-upgrade -y'
+alias install='sudo apt-get install -y'
+alias install-ee='wget -qO ee rt.cx/ee && sudo bash ee'
+alias ee='sudo ee'
+alias remove='sudo apt-get remove --purge -y'
+alias clean='sudo apt-get autoclean -y && sudo apt-get autoremove -y'
+alias search='apt-cache search'
+
+# nano
+alias xapt='sudo nano /etc/apt/sources.list'
+alias xaliases='nano ~/.build-scripts/dotfiles/.bash.d/bash_aliases && echo "reloading bash" && source ~/.bashrc'
+alias nanorc='sudo nano /etc/nanorc'
+alias sshd='sudo nano /etc/ssh/sshd_config && echo "restarting sshd" && sleep 2 && sudo service ssh restart'
+alias xkeys='nano ~/.ssh/authorized_keys'
+alias xnet='sudo nano /etc/network/interfaces'
+alias xtime='sudo nano /etc/ntp.conf'
+alias xee='sudo nano /etc/ee/ee.conf'
+alias xtables='sudo nano /etc/iptables.conf'
+alias xfunctions='sudo nano /var/www/affinityskin.com.au/htdocs/wp-content/themes/x-child/functions.php'
+alias xgrub='sudo nano /etc/default/grub && sudo update-grub'
+alias xbash="source ~/.bashrc"
+
+# commands
+alias visudo='sudo visudo'
+alias service='sudo service'
+alias ufw='sudo ufw'
+alias shutdown='sudo shutdown now'
+alias reboot='sudo reboot'
+alias nginx='sudo nginx'
+alias cp='sudo cp -av'
+alias mv='sudo mv'
+alias rm='sudo rm -rf'
+alias chown='sudo chown -R loki:loki'
+alias chownr='sudo chown -R root:root'
+alias chmod='sudo chmod -R'
+alias wpscan='sudo ruby ~/wpscan/wpscan.rb'
+alias ifconfig='sudo ifconfig'
+alias cat='sudo cat'
+alias tail='sudo tail'
+alias mount='sudo mount'
+alias umount='sudo umount'
+alias chroot='sudo chroot'
+alias ln='sudo ln -s'
+alias unzip='sudo unzip'
+
+# locations
+alias www='cd /var/www'
+alias devd='cd /var/www/dev.affinityskin.com.au/htdocs'
+alias wwwd='cd /var/www/dev.affinityskin.com.au/htdocs/wp-content'
+alias wwws='cd /var/www/staging.affinityskin.com.au/htdocs/wp-content'
+alias wwww='cd /var/www/affinityskin.com.au/htdocs/wp-content'
+alias wwwf='cd /var/www/fresh.affinityskin.com.au/htdocs/wp-content'
+alias wwwx='cd /var/www/xfresh.affinityskin.com.au/htdocs/wp-content'
+alias www2='cd /var/www/22222/htdocs'
+alias log='cd /var/log'
+alias xnginx='cd /etc/nginx'
+alias ntest='nginx -t'
+alias nreload='sudo service nginx reload'
+alias nstop='sudo service nginx stop'
+alias nsstart='sudo service nginx start'
+alias sigma='ssh -p 221 loki@192.168.0.21'
+
+
+alias ipwan='curl ifconfig.me/ip'
+alias sigma='TERM=xterm ssh -p 160 loki@ts.loginto.me'
+alias proxima='TERM=xterm ssh -p 200 loki@ts.loginto.me'
+alias omega='TERM=xterm ssh -p 250 root@ts.loginto.me'
+alias cerberus='TERM=xterm ssh loriezn@cerberus.seedboxes.cc'
+alias freenas='TERM=xterm ssh -p 240 root@ts.loginto.me'
+
