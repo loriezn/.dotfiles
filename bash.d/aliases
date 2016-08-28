@@ -63,6 +63,8 @@ alias xgrub='sudo nano /etc/default/grub && sudo update-grub'
 alias xbash="source ~/.bashrc"
 
 # commands
+alias pip='sudo -H pip'
+alias pip2='sudo -H pip2'
 alias visudo='sudo visudo'
 alias service='sudo service'
 alias ufw='sudo ufw'
