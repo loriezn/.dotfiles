@@ -1,11 +1,11 @@
 #!/bin/bash
-source ${HOME}/.vars.sh
+DOTFILES=${HOME}/.dotfiles
 
 cd ${HOME}
 #cp ${HOME}/.bashrc ${HOME}/.bashrc.bu
 ln -snf ${DOTFILES}/bashrc $HOME/.bashrc
-ln -snf ${DOTFILES}/bash.d $HOME.bash.d
-#mv ${HOME}/.config ${HOME}/.config-bu
+ln -snf ${DOTFILES}/bash.d $HOME/.bash.d
+mv ${HOME}/.config ${HOME}/.config-bu
 ln -snf ${DOTFILES}/config $HOME/.config
 ln -snf ${DOTFILES}/i3 $HOME/.i3
 ln -snf ${DOTFILES}/vim $HOME/.vim

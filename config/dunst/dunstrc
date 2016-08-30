@@ -36,7 +36,7 @@
     separator_color = frame
     startup_notification = false
     # dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/google-chrome-beta
+    browser = /usr/bin/firefox-developer
     icon_position = off
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
