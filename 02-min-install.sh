@@ -11,7 +11,10 @@ sudo pacman -S base-devel fakeroot jshon expac \
   python2-suds \
   xcb-util-keysyms \
   xcb-util-wm \
+  gnome-keyring \
   xcb-util-cursor \
+  alsa-tools \
+  alsa-utils \
   xorg-xinit \
   yajl \
   startup-notification \
@@ -48,38 +51,4 @@ sudo pacman -S base-devel fakeroot jshon expac \
   arandr \
   xclip \
   weechat
-
-echo "Installing via packer..."
-packer -S \
-  termite-git \
-  i3blocks-gaps-git \
-  compton-git \
-  ttf-font-awesome \
-  ohsnap \
-  pulseaudio-ctl \
-  ttf-hack \
-  powerline-fonts-git \
-  thunar-archive-plugin \
-  file-roller \
-  xedgewarp-git \
-  unclutter-xfixes-git \
-  thefuck \
-  youtube-dl \
-  slop \
-  maim \
-  python-basiciw \
-  neofetch-git \
-  python-pillow \
-  python-urllib3 \
-  numix-icon-theme-git \
-  rofi \
-  vim-airline \
-  vim-fugitive \
-  vim-gruvbox-git \
-  vim-airline-gruvbox-git \
-  vim-youcompleteme-git \
-  vim-gitgutter-git \
-  xtitle-git \
-  firefox-developer
-
 

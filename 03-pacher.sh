@@ -2,7 +2,7 @@
 set -e
 
 echo "Installing via packer..."
-packer -S \
+packer -S --noedit --noconfirm \
   termite-git \
   i3blocks-gaps-git \
   compton-git \
