@@ -15,19 +15,21 @@ alias g='git'
 alias gs='git status';
 
 ga() { 
-	if [ "$1" != "" ]; then 
-		git add "$1" else git add ./* 
+	if [ "$@" != "" ]; then 
+		git add "$1" 
+	else 
+		git add -A  
 	fi 
 }
 gm() { 
-	if [ "$1" != "" ]; then 
+	if [ "$@" != "" ]; then 
 		git commit -m "$1" 
 	else 
 		git commit -m "updates" 
 	fi 
 }
 gr() { 
-	if [ "$1" == all ]; then 
+	if [ "$@" == all ]; then 
 		git checkout -- ./* 
 	else 
 		git checkout -- "$1" 
@@ -37,16 +39,15 @@ gc() {
 	git clone https://github.com/affinityskin/"$1" 
 }
 
-# apt-get
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade -y'
-alias dist-upgrade='sudo apt-get dist-upgrade -y'
-alias install='sudo apt-get install -y'
-alias install-ee='wget -qO ee rt.cx/ee && sudo bash ee'
-alias ee='sudo ee'
-alias remove='sudo apt-get remove --purge -y'
-alias clean='sudo apt-get autoclean -y && sudo apt-get autoremove -y'
-alias search='apt-cache search'
+# pacman
+alias update='sudo pacman -Sy'
+alias upgrade='sudo pacman -Syuu'
+alias install='sudo pacman -S'
+alias remove='sudo pacman -Rsc'
+alias search='pacman -Ss'
+
+#
+ packer
 
 # nano
 alias xapt='sudo nano /etc/apt/sources.list'
@@ -110,5 +111,10 @@ alias sigma='TERM=xterm ssh -p 160 loki@ts.loginto.me'
 alias proxima='TERM=xterm ssh -p 200 loki@ts.loginto.me'
 alias omega='TERM=xterm ssh -p 250 root@ts.loginto.me'
 alias cerberus='TERM=xterm ssh loriezn@cerberus.seedboxes.cc'
-alias freenas='TERM=xterm ssh -p 240 root@ts.loginto.me'
+
+
+alias log='cd /var/log'
+alias xnginx='cd /etc/nginx'
+alias ntest='nginx -t'
+alias nreload='sudo service nginx reload'
 
