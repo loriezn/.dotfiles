@@ -15,10 +15,10 @@ alias g='git'
 alias gs='git status';
 
 ga() { 
-	if [ "$@" != "" ]; then 
+	if [ "$#" != "" ]; then 
 		git add "$@" 
 	else 
-		git add -A  
+		git add -A
 	fi 
 }
 gm() { 
@@ -52,9 +52,10 @@ alias upgrade='sudo pacman -Syuu'
 alias install='sudo pacman -S'
 alias remove='sudo pacman -Rsc'
 alias search='pacman -Ss'
+alias pacman='sudo pacman'
 
-#
- packer
+# packer
+alias packer='packer --noedit --noconfirm'
 
 # nano
 alias xapt='sudo nano /etc/apt/sources.list'
