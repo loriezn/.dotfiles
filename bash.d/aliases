@@ -16,23 +16,30 @@ alias gs='git status';
 
 ga() { 
 	if [ "$@" != "" ]; then 
-		git add "$1" 
+		git add "$@" 
 	else 
 		git add -A  
 	fi 
 }
 gm() { 
 	if [ "$@" != "" ]; then 
-		git commit -m "$1" 
+		git commit -m "$@" 
 	else 
 		git commit -m "updates" 
 	fi 
 }
+gp() {
+	if [ "$1" != "" ]; then
+		git push origin "$1"
+	else
+		git push origin master
+	fi
+}
 gr() { 
-	if [ "$@" == all ]; then 
-		git checkout -- ./* 
+	if [ "$@" != "" ]; then 
+		git rm "$@"
 	else 
-		git checkout -- "$1" 
+		git rm ./* 
 	fi 
 }
 gc() { 
