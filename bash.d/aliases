@@ -39,7 +39,7 @@ ga(){
     echo "all changes added to que"
     git add -Av
   else
-    echo "added ${FILEADD[*]}; to que"
+    echo "added ${FILEADD[*]} to que"
     git add "${FILEADD[@]}";
   fi
   printf "\r"
