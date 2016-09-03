@@ -1,9 +1,9 @@
 [options]
-font = Hack 10
+font = Hack 8
 browser = firefox
 clickable_url = true
 dynamic_title = true
-geometry = 1000x600
+geometry = 3200x1800
 scrollback_lines = 999999
 scroll_on_keystroke = true
 scroll_on_output = false

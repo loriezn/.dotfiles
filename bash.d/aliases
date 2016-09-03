@@ -14,46 +14,80 @@ alias refresh='xrandr --output eDP1 --mode 1920x1080 --auto'
 alias g='git'
 alias gs='git status';
 
-ga() { 
-	if [ "$#" != "" ]; then 
-		git add "$@" 
-	else 
-		git add -A
-	fi 
+#Github Shortcuts & Functions
+gi(){
+  # Initalize a fresh online Github Repository.
+  if [ -z "$GITREPO" ]; then
+    echo "Great Scott! You forgot to tell me the repo's name."
+  else
+    GITUSER=anchortenant
+    GITREPO="$*"
+    touch README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin git@github.com:"$GITUSER"/"$GITREPO".git
+    git push -u origin master
+    printf "\r Git Initialized"
+  fi
 }
-gm() { 
-	if [ "$@" != "" ]; then 
-		git commit -m "$@" 
-	else 
-		git commit -m "updates" 
-	fi 
+alias gs='git status'
+ga(){
+  # Add all files to Git VCS que unless specifically stated.
+  FILEADD=( "$@" )
+  if [ -z "$FILEADD" ]; then
+    echo "all changes added to que"
+    git add -Av
+  else
+    echo "added ${FILEADD[*]}; to que"
+    git add "${FILEADD[@]}";
+  fi
+  printf "\r"
+  echo "Great Scott!! There's changes in the time-space continuum!"
 }
-gp() {
-	if [ "$1" != "" ]; then
-		git push origin "$1"
-	else
-		git push origin master
-	fi
+gchk(){
+  # Remove flagged changes from Git
+  git checkout -- "$@"
 }
-gr() { 
-	if [ "$@" != "" ]; then 
-		git rm "$@"
-	else 
-		git rm ./* 
-	fi 
+gm(){
+  # Commit added changged to current working directory branch.
+  # Use default error debuuging message for commit description unless otherwise stated.
+  MSG="Commited changes ready to push"
+  FILEMODS="$*"
+  if [ -z "$FILEMODS" ]; then
+    git commit -m "Error debugged \& fixed"
+    echo "$MSG"
+  else
+    git commit -m "$FILEMODS"
+  fi
+  printf "\r"
+  echo "$MSG"
+}
+gp(){
+  # Push commited local branch to Github repository's master branch unless otherwise stated.
+  REPO="$1"
+  if [ -z "$REPO" ]; then
+    echo "Commiting changes to master"
+    git push origin master
+  else
+    echo "Commiting changes to $REPO"
+    git push origin "$REPO"
+  fi
+  printf "\n"
+	echo "Changes sucessfully uploaded"
 }
 gc() { 
-	git clone https://github.com/affinityskin/"$1" 
+	git clone https://github.com/anchortenant/"$1" 
 }
 
 # pacman
 alias update='sudo pacman -Sy'
 alias upgrade='sudo pacman -Syuu'
-alias install='sudo pacman -S'
+alias install='packer --noedit --noconfirm -S'
 alias remove='sudo pacman -Rsc'
-alias search='pacman -Ss'
+alias search='packer -Ss'
 alias pacman='sudo pacman'
-
+alias pinfo='packer -Si'
 # packer
 alias packer='packer --noedit --noconfirm'
 
@@ -115,8 +149,7 @@ alias ipwan='curl ifconfig.me/ip'
 
 # SSH Locations
 alias psi='TERM=xterm ssh loki@192.168.0.10'
-alias sigma='TERM=xterm ssh -p 160 loki@ts.loginto.me'
-alias proxima='TERM=xterm ssh -p 200 loki@ts.loginto.me'
+alias epsilon='TERM=xterm ssh -p 200 loki@ts.loginto.me'
 alias omega='TERM=xterm ssh -p 250 root@ts.loginto.me'
 alias cerberus='TERM=xterm ssh loriezn@cerberus.seedboxes.cc'
 
