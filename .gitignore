@@ -4,6 +4,15 @@
 */__pycache__
 *.pyc
 
+config/*
+!config/dunst
+!config/gsimplecal
+!config/gtk-2.0
+!config/gtk-3.0
+!config/i3lock
+!conig/termite
+!config/wallpapers
+
 .config/*
 !.config/dunst
 !.config/gsimplecal
