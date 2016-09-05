@@ -1,5 +1,5 @@
 [user]
-	name = anchortenant
+	name = loriezn
 	email = loriezn@gmail.com
 
 [alias]
@@ -17,7 +17,7 @@
     diff = auto
     status = auto
     branch = auto
-	ui = true
+	ui = always
 [push]
 	default = simple
 [merge]
