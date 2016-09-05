@@ -89,7 +89,7 @@ alias search='packer -Ss'
 alias pacman='sudo pacman'
 alias pinfo='packer -Si'
 # packer
-alias packer='packer --noedit --noconfirm'
+alias packer='packer --noedit'
 
 # nano
 alias xapt='sudo nano /etc/apt/sources.list'
