@@ -150,7 +150,7 @@ alias ipwan='curl ifconfig.me/ip'
 # SSH Locations
 alias psi='TERM=xterm ssh loki@192.168.0.10'
 alias epsilon='TERM=xterm ssh -p 200 loki@ts.loginto.me'
-alias omega='TERM=xterm ssh -p 250 root@ts.loginto.me'
+alias omega='TERM=xterm ssh -p 250 loki@ts.loginto.me'
 alias cerberus='TERM=xterm ssh loriezn@cerberus.seedboxes.cc'
 
 
