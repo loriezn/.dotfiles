@@ -128,9 +128,12 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.scripts/volume_control.py down 5
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.scripts/volume_control.py up 5
-bindsym XF86AudioMute exec --no-startup-id $HOME/.scripts/volume_control.py toggle
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1
+#bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.scripts/volume_control.py down 5
+#bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.scripts/volume_control.py up 5
+#bindsym XF86AudioMute exec --no-startup-id $HOME/.scripts/volume_control.py toggle
 bindsym $mod+Shift+v exec --no-startup-id "killall pavucontrol; $HOME/.scripts/fullscreen_wrap.sh pavucontrol -t 3"
 
 bindsym XF86MonBrightnessDown exec --no-startup-id ${HOME}/.scripts/backlight.sh -dec 10
@@ -258,7 +261,7 @@ new_window none
 for_window [class=(?i)termite] border normal 5
 for_window [class=(?i)sublime] border pixel 3
 for_window [class=(?i)firefox] border pixel 3
-for_window [class=(?i)chromium-browser] border pixel 3
+for_window [class=(?i)chrome] border pixel 3
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -281,7 +284,7 @@ for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, border normal, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 34px
 
-assign [class="(?i)chromium-browser"]             $ws1
+assign [class="(?i)chrome"]             $ws1
 assign [class="(?i)eclipse" window_type="splash"] $ws3
 assign [class="(?i)eclipse" window_type="normal"] $ws3
 assign [class="launchfox"] $ws2
@@ -321,20 +324,17 @@ exec --no-startup-id dunst &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id nm-applet &
 exec --no-startup-id xedgewarp -b
-exec --no-startup-id solaar && restart
+exec --no-startup-id solaar &
 
 # SCREEN SETUP
-exec --no-startup-id xrandr --output DP2 --auto --primary
-exec --no-startup-id xrandr --output DP3 --right-of DP2 --auto && restart && sleep 1
-#exec --no-startup-id xrandr --output DisplayPort-1-0 --left-of DP2 && restart
-
+exec --no-startup-id xrandr --output eDP1 --mode 2048x1152 --auto --primary
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/octocat.jpg
-exec --no-startup-id $editor && restart
-exec --no-startup-id firefox && restart
-exec --no-startup-id sublime && restart
+exec --no-startup-id $editor
+exec --no-startup-id firefox
+exec --no-startup-id sublime
 
 # CUSTOM COMMANDS
 bindsym $MOD+Shift+f exec --no-startup-id firefox &
 bindsym $MOD+Control+s exec --no-startup-id sublime &
 bindsym $MOD+c exec $editor
-bindsym $MOD+Control+c exec --no-startup-id chromium-browser &
+bindsym $MOD+Control+c exec --no-startup-id chrome &

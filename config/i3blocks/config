@@ -25,14 +25,6 @@ signal=1
 markup=pango
 border=#cc241d
 
-#[volume]
-#label=    
-#command=[[ -z "${BLOCK_BUTTON}" ]] || ( [[ "${BLOCK_BUTTON}" == "1" ]] && ((/usr/bin/pavucontrol -t 3 --name "pavucontrol-bar" || true) && $HOME/.scripts/volume_control.py signal) || $HOME/.scripts/volume_control.py ); $HOME/.scripts/volume_control.py i3blocks
-#interval=5
-#signal=1
-#markup=pango
-#border=#cc241d
-
 [brightness]
 label=    
 command=printf "%.0f " $(xbacklight -get)
@@ -45,6 +37,12 @@ label= 
 command=echo "$($HOME/.scripts/temperature.sh 'Core 0') $($HOME/.scripts/temperature.sh 'Core 1') "
 interval=5
 border=#b16286
+
+[email]
+label= 
+command=$HOME/.scripts/email
+interval=300
+min_width= 99
 
 [wireless]
 label=    

@@ -17,7 +17,7 @@
     diff = auto
     status = auto
     branch = auto
-	ui = always
+	ui = 1
 [push]
 	default = simple
 [merge]
@@ -30,3 +30,7 @@
 [core]
 	autocrlf = false
 	fileMode = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

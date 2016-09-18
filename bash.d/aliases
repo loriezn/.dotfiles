@@ -8,13 +8,14 @@ alias c='clear'
 alias x='exit'
 alias q='exit'
 alias i='sudo -i'
-alias refresh='xrandr --output eDP1 --mode 1920x1080 --auto'
+alias refresh='xrandr --output eDP1 --mode 2048x1152 --auto'
 
 # git
 alias g='git'
 alias gs='git status';
 
 #Github Shortcuts & Functions
+alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 gi(){
   # Initalize a fresh online Github Repository.
   if [ -z "$GITREPO" ]; then
@@ -76,9 +77,7 @@ gp(){
   printf "\n"
 	echo "Changes sucessfully uploaded"
 }
-gc() { 
-	git clone https://github.com/anchortenant/"$1" 
-}
+alias gc='git clone'
 
 # pacman
 alias update='sudo pacman -Sy'
@@ -94,6 +93,7 @@ alias packer='packer --noedit'
 # nano
 alias xapt='sudo nano /etc/apt/sources.list'
 alias xaliases='nano ~/.dotfiles/bash.d/aliases && echo "reloading bash" && source ~/.bashrc'
+alias xi3='nano ~/.i3/config'
 alias nanorc='sudo nano /etc/nanorc'
 alias sshd='sudo nano /etc/ssh/sshd_config && echo "restarting sshd" && sleep 2 && sudo service ssh restart'
 alias xkeys='nano ~/.ssh/authorized_keys'
@@ -106,6 +106,7 @@ alias xgrub='sudo nano /etc/default/grub && sudo update-grub'
 alias xbash="source ~/.bashrc"
 
 # commands
+alias gparted='sudo gparted &'
 alias pip='sudo -H pip'
 alias pip2='sudo -H pip2'
 alias visudo='sudo visudo'
