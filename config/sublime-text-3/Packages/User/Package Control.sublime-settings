@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"Ansible",
+		"Ansible Vault",
+		"AnsibleSnippets",
+		"Auto Fold",
+		"Auto Refresh",
+		"Auto-Spacing",
+		"AutoAligner",
+		"Autoprefixer",
+		"AutoSoftWrap",
+		"AutoWidth",
+		"Colorsublime",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Minify",
+		"Package Control",
+		"Seti_UI",
+		"Seti_UX",
+		"Terminal",
+		"Themr"
+	]
+}

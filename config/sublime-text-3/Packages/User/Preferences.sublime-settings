@@ -1,0 +1,33 @@
+{
+	"Seti_ClosedFolder_anim": true,
+	"Seti_ClosedFolder_dots": false,
+	"Seti_ClosedFolder_remove": true,
+	"Seti_ClosedFolder_same": true,
+	"Seti_SB_big": true,
+	"Seti_accent": true,
+	"Seti_accent_yellow": true,
+	"Seti_alt_tree_row": true,
+	"Seti_bold_heading": true,
+	"Seti_bold_slctdfile_labels": true,
+	"Seti_bold_slctdtab_labels": true,
+	"Seti_sb_blank": true,
+	"Seti_show_group_arrows": true,
+	"Seti_sidebar_font_Hack": true,
+	"Seti_sidebar_font_size_14": true,
+	"Seti_top_heading_anim": true,
+	"Seti_top_heading_big": true,
+	"Seti_yellow_label": true,
+	"Seti_yellow_map": true,
+	"Seti_yellow_scrollbar": true,
+	"Seti_yellow_statusbar": true,
+	"Seti_yellow_tabclose": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Colorsublime - Themes/Harper.tmTheme",
+	"font_size": 15,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Seti.sublime-theme"
+}

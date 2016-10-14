@@ -1,1 +1,1 @@
-alias g="git"
+alias g="nano $HOME/.bash.d/g && source $HOME/.bashrc && echo 'BASH Reloaded'"

@@ -1,0 +1,124 @@
+{
+	// #####################
+	// #  IMPORTANT NOTE!  #
+	// #####################
+	//
+	// Please do not modify this file! This file holds the default settings of Minify.
+	//
+	// If you wish to customize these settings then create a `Settings -- User` file first
+	// and make your customization there.
+	//
+	// If you edit this file, your custom settings will be overwritten at the next update of Minify!
+
+	// #####################
+	// #  Global Settings  #
+	// #####################
+
+	// Save file before doing any action (minify or beautify)?
+	"save_first": true,
+
+	// Auto-minify files on save?
+	"auto_minify_on_save": false,
+
+	// Open resulting file (minified or beautified)?
+	"open_file": true,
+
+	// Only Minify specified file types (css, js, json, html, svg) when "auto_minify_on_save" is used
+	"allowed_file_types": [
+		"css",
+		"js",
+		"json",
+		"html",
+		"svg"
+	],
+
+	// ############################
+	// #  CSS Processing Options  #
+	// ############################
+
+	// you can specify which CSS minifier to use such as "clean-css", "uglifycss" or "yui"
+	// notes: the default is "clean-css"; you must have java installed for "yui"
+	"cssminifier": "clean-css",
+
+	// you may want to define the cleancss command with an absolute path
+	"cleancss_command": "/home/loki/.npm-global/bin/cleancss",
+
+	// you can specify command line parameters for cleancss
+	"cleancss_options": "--s0 -s --skip-rebase",
+
+	// you may want to define the uglifycss command with an absolute path
+	"uglifycss_command": "/home/loki/.npm-global/bin/uglifycss",
+
+	// you can specify command line parameters for uglifycss
+	"uglifycss_options": "--max-line-len 250",
+
+	// you may want to define the js-beautify command with an absolute path
+	"js-beautify_command": "/home/loki/.npm-global/bin/js-beautify",
+
+	// you can specify command line parameters for .css beautification
+	"js-beautify_options": "--indent-size=2",
+
+	// if you need a CSS source map (supported by clean-css only) in the destination directory (same as original source), enable this option
+	"css_source_map": false,
+
+	// ###################################
+	// #  JavaScript Processing Options  #
+	// ###################################
+
+	// you may want to define the uglifyjs command with an absolute path
+	"uglifyjs_command": "/home/loki/.npm-global/bin/uglifyjs",
+
+	// do you wamt to keep comments when minifying javascript files?
+	"keep_comments": false,
+	// you can also specify which comments to keep
+	// if you set `keep_comments` to true and leave `comments_to_keep` false then uglifyjs will only keep JSDoc-style copyright comments
+	// but if you set `keep_comments` to true then you can also specify which comments to keep: set `comments_to_keep` to "all" to keep
+	// all comments or you can provide a regexp such as "/!/" (this will keep only comments which contain an exclamation mark)
+	"comments_to_keep": false,
+
+	// you can specify command line parameters for .js beautification
+	"uglifyjs_pretty_options": "indent-level=2",
+
+	// if you need a source map in the destination directory (same as original source), enable this option
+	"source_map": false,
+
+	// #############################
+	// #  HTML Processing Options  #
+	// #############################
+
+	// you may want to define the html-minifier command with an absolute path
+	"html-minifier_command": "/home/loki/.npm-global/bin/html-minifier",
+
+	// you can specify command line parameters for .html minification
+	"html-minifier_options": "--remove-comments --collapse-whitespace --conservative-collapse --collapse-boolean-attributes --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --minify-js --minify-css",
+
+	// you can specify command line parameters for .html beautification
+	"js-beautify_html_options": "--indent-size=2",
+
+	// #############################
+	// #  JSON Processing Options  #
+	// #############################
+
+	// you may want to define the minjson command with an absolute path
+	"minjson_command": "/home/loki/.npm-global/bin/minjson",
+
+	// ############################
+	// #  SVG Processing Options  #
+	// ############################
+
+	// you may want to define the svgo command with an absolute path
+	"svgo_command": "/home/loki/.npm-global/bin/svgo",
+
+	// you can specify command line parameters for .svg minification
+	"svgo_min_options": "--multipass",
+
+	// you can specify command line parameters for .svg prettification
+	// "svgo_pretty_options": "--multipass"
+
+	// ###############
+	// #  Debugging  #
+	// ###############
+
+	// Enable debug mode?
+	"debug_mode": false
+}

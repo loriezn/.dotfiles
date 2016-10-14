@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+##Github Shortcuts & Functions
+
+###GIT LOG###
+alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset \
+    -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+    --abbrev-commit --date=relative"
+
+###GIT INIT###
+gi(){
+    # Initalize a fresh online Github Repository.
+    if [ -z "$GITREPO" ]; then
+        echo "Great Scott! You forgot to tell me the repo's name."
+    else
+        GITUSER=anchortenant
+        GITREPO="$*"
+        touch README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git remote add origin git@github.com:"$GITUSER"/"$GITREPO".git
+        git push -u origin master
+        printf "\r Git Initialized"
+    fi
+}
+
+###GIT STATUS###
+alias gs='git status'
+
+###GIT ADD###
+ga(){
+    # Add all files to Git VCS que unless specifically stated.
+    FILEADD=( "$@" )
+    if [ -z "${FILEADD}" ]; then
+        echo "all changes added to que"
+        git add -Av
+    else
+        echo "added ${FILEADD[*]} to que"
+        git add "${FILEADD[@]}";
+    fi
+    printf "\r"
+    echo "Great Scott!! There's changes in the time-space continuum!"
+}
+
+###GIT CHECKOUT###
+gchk(){
+    # Remove flagged changes from Git
+    git checkout -- "$@"
+}
+
+###GIT COMMIT###
+gm(){
+    # Commit added changged to current working directory branch.
+    # Use default error debuuging message for commit description unless otherwise stated.
+    MSG="Commited changes ready to push"
+    FILEMODS="$*"
+    if [ -z "$FILEMODS" ]; then
+        git commit -m "Error debugged \& fixed"
+        echo "$MSG"
+    else
+        git commit -m "$FILEMODS"
+    fi
+    printf "\r"
+    echo "$MSG"
+}
+
+###GITPUSH###
+gp(){
+    # Push commited local branch to Github repository's master branch unless otherwise stated.
+    REPO="$1"
+    if [ -z "$REPO" ]; then
+            echo "Commiting changes to master"
+            git push origin master
+    else
+            echo "Commiting changes to $REPO"
+            git push origin "$REPO"
+    fi
+    printf "\n"
+    echo "Changes sucessfully uploaded"
+}
+
+###GIT CLONE###
+gc(){
+	GUSER="$1"
+	GREPO="$2"
+	if [ -z "$GUSER" ]; then
+		git clone git@github.com:loriezn/"$GREPO"
+	else
+		git clone git@github.com:"$GUSER"/"$GREPO"
+	fi
+}
+

@@ -1,3 +1,4 @@
+
 # vim:filetype=i3
 # i3 config file (v4)
 set $mod Mod4
@@ -24,14 +25,14 @@ set $darkwhite   #a89984
 # set $background  #000000
 set $transparent #1d202100
 
-set $ws1  "1:  "
-set $ws2  "2:  "
+set $ws1  "1:  "
+set $ws2  "2:  "
 set $ws3  "3:  "
-set $ws4  "4:  "
-set $ws5  "5:  "
-set $ws6  "6:  "
-set $ws7  "7:  "
-set $ws8  "8:  "
+set $ws4  "4:  "
+set $ws5  "5:  "
+set $ws6  "6:  "
+set $ws7  "7:  "
+set $ws8  "8:  "
 set $ws9  "9:  "
 set $ws10 "10:  "
 
@@ -54,7 +55,7 @@ focus_on_window_activation urgent
 floating_minimum_size -1 x -1
 floating_maximum_size -1 x -1
 
-font pango:Hack, FontAwesome 10
+font pango:Hack, FontAwesome 12
 
 #                       BORDER      BACKGROUND  TEXT   INDICATOR   CHILD_BORDER
 client.focused          $yellow     $yellow     $black $yellow     $yellow
@@ -115,7 +116,7 @@ bindsym $mod+Shift+plus scratchpad show
 
 bindsym $mod+Shift+s sticky toggle
 # put YouTube into fullscreen and execute this for media mode
-bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 2140 20
+bindsym $mod+y fullscreen disable; floating enable; resize set 1400 600; sticky enable; move window to position 1940 154
 
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -150,9 +151,9 @@ bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.0
 
 bindsym $mod+n exec --no-startup-id thunar
 
-set $mode_resize <span>        </span><span background='#fabd2f' foreground='#000000'> resize </span> <span foreground='#ebdbb2'>l</span>eft <span foreground='#ebdbb2'>r</span>ight <span foreground='#ebdbb2'>u</span>p <span foreground='#ebdbb2'>d</span>own
+set $mode_resize resize 
 bindsym $mod+r mode "$mode_resize"
-mode --pango_markup "$mode_resize" {
+mode "$mode_resize" {
     bindsym Left resize shrink width 10 px or 1 ppt
     bindsym Down resize grow height 10 px or 1 ppt
     bindsym Up resize shrink height 10 px or 1 ppt
@@ -261,7 +262,7 @@ new_window none
 for_window [class=(?i)termite] border normal 5
 for_window [class=(?i)sublime] border pixel 3
 for_window [class=(?i)firefox] border pixel 3
-for_window [class=(?i)chrome] border pixel 3
+for_window [class=(?i)chromium] border pixel 3
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -284,9 +285,9 @@ for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, border normal, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 34px
 
-assign [class="(?i)chrome"]             $ws1
-assign [class="(?i)eclipse" window_type="splash"] $ws3
-assign [class="(?i)eclipse" window_type="normal"] $ws3
+assign [class="(?i)chromium"]             $ws1
+assign [class="(?i)sublime" window_type="splash"] $ws3
+assign [class="(?i)sublime" window_type="normal"] $ws3
 assign [class="launchfox"] $ws2
 
 bar {
@@ -330,11 +331,14 @@ exec --no-startup-id solaar &
 exec --no-startup-id xrandr --output eDP1 --mode 2048x1152 --auto --primary
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/octocat.jpg
 exec --no-startup-id $editor
-exec --no-startup-id firefox
+exec --no-startup-id chromium
 exec --no-startup-id sublime
 
 # CUSTOM COMMANDS
-bindsym $MOD+Shift+f exec --no-startup-id firefox &
-bindsym $MOD+Control+s exec --no-startup-id sublime &
+bindsym $MOD+Shift+f exec --no-startup-id firefox
+bindsym $MOD+Control+s exec --no-startup-id sublime
 bindsym $MOD+c exec $editor
-bindsym $MOD+Control+c exec --no-startup-id chrome &
+bindsym $MOD+Control+c exec --no-startup-id chromium
+exec_always --no-startup-id "pgrep --exact xev || xev -root -event randr | grep --line-buffered ScreenChangeNotify | while read change; do pkill-RTMIN+4 i3blocks; done"
+
+

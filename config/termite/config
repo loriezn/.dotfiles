@@ -1,5 +1,5 @@
 [options]
-font = Hack 8
+font = Hack 12
 browser = firefox
 clickable_url = true
 dynamic_title = true

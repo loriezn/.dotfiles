@@ -4,15 +4,6 @@
 */__pycache__
 *.pyc
 
-config/*
-!config/dunst
-!config/gsimplecal
-!config/gtk-2.0
-!config/gtk-3.0
-!config/i3lock
-!conig/termite
-!config/wallpapers
-
 .config/*
 !.config/dunst
 !.config/gsimplecal
@@ -32,3 +23,8 @@ config/*
 !.weechat/weechat.conf
 !.weechat/plugins.conf
 !.weechat/perl/beep.pl
+
+.config/sublime-text-3/*
+!.config/sublime-text-3/Packages/User/*.*-settings
+
+.config/chromium/*
