@@ -260,9 +260,9 @@ mode --pango_markup "$mode_brightness" {
 # fix graphics glitch
 new_window none
 for_window [class=(?i)termite] border normal 5
-for_window [class=(?i)sublime] border pixel 3
-for_window [class=(?i)firefox] border pixel 3
-for_window [class=(?i)chromium] border pixel 3
+for_window [class=(?i)sublime] border pixel 5
+for_window [class=(?i)firefox] border pixel 5
+for_window [class=(?i)chromium] border pixel 5
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -285,9 +285,6 @@ for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, border normal, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 34px
 
-assign [class="(?i)chromium"]             $ws1
-assign [class="(?i)sublime" window_type="splash"] $ws3
-assign [class="(?i)sublime" window_type="normal"] $ws3
 assign [class="launchfox"] $ws2
 
 bar {
@@ -328,7 +325,7 @@ exec --no-startup-id xedgewarp -b
 exec --no-startup-id solaar &
 
 # SCREEN SETUP
-exec --no-startup-id xrandr --output eDP1 --mode 2048x1152 --auto --primary
+exec --no-startup-id xrandr --output eDP1 --mode 2048x1152 --auto --primary && exec --no-startup-id restart
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/octocat.jpg
 exec --no-startup-id $editor
 exec --no-startup-id chromium

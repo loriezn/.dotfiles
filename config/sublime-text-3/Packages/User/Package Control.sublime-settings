@@ -16,14 +16,19 @@
 		"Autoprefixer",
 		"AutoSoftWrap",
 		"AutoWidth",
+		"Browser Integration",
 		"Colorsublime",
+		"i3 wm",
+		"Icon Fonts",
 		"Markdown Preview",
 		"MarkdownEditing",
 		"Minify",
 		"Package Control",
 		"Seti_UI",
 		"Seti_UX",
+		"SummitLinter",
 		"Terminal",
+		"Theme - Seti Monokai",
 		"Themr"
 	]
 }

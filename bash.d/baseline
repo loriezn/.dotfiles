@@ -1,0 +1,2 @@
+export PATH=$PATH:/opt/baseline/bin
+eval "$(baseline autocomplete)"

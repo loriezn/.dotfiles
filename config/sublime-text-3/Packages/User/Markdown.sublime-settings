@@ -6,8 +6,8 @@
 		"txt"
 	],
 
-	"color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
-	// "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
+	//"color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
+	 "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
 	// "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Yellow.tmTheme",
 
 	// This is a quick and dirty focus theme. In order to make it work, you've to
@@ -22,12 +22,12 @@
 
 	// Layout
 	"draw_centered": true,
-	"word_wrap": true,
-	"wrap_width": 80,
+	"word_wrap": false,
+	"wrap_width": 360,
 	"rulers": [],
 
 	// Line
-	"line_numbers": true,
+	"line_numbers": false,
 	"highlight_line": false,
 	"line_padding_top": 2,
 	"line_padding_bottom": 2,

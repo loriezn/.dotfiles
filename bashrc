@@ -23,6 +23,7 @@ export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
 export JAVA_FONTS=/usr/share/fonts/TTF
 export EDITOR=/usr/bin/nano
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 bind '"\eOA": history-search-backward'
 bind '"\e[A": history-search-backward'
@@ -105,10 +106,3 @@ fi
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
-
-
-export NVM_DIR="/home/loki/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"

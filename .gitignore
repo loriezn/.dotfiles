@@ -1,30 +1,38 @@
 *.swp
-.vim/.netrwhist
-.i3/config.vanilla
+vim/.netrwhist
+i3/config.vanilla
 */__pycache__
 *.pyc
 
-.config/*
-!.config/dunst
-!.config/gsimplecal
-!.config/gtk-2.0
-!.config/gtk-3.0
-!.config/i3lock
-!.config/termite
-!.config/wallpapers
+config/*
+!config/dunst
+!config/gsimplecal
+!config/gtk-2.0
+!config/gtk-3.0
+!config/i3lock
+!config/termite
+!config/wallpapers
 
-!.config/htop
-!.config/htop/htoprc
+!config/htop
+!config/htop/htoprc
 
-!.config/i3blocks
-!.config/i3blocks/config
+!config/i3blocks
+!config/i3blocks/config
 
-.weechat/*
-!.weechat/weechat.conf
-!.weechat/plugins.conf
-!.weechat/perl/beep.pl
+weechat/*
+!weechat/weechatconf
+!weechat/pluginsconf
+!weechat/perl/beep.pl
 
-.config/sublime-text-3/*
-!.config/sublime-text-3/Packages/User/*.*-settings
+config/sublime-text-3/*
+!config/sublime-text-3/Packages/User/*.*-settings
 
-.config/chromium/*
+config/chromium/*
+
+config/menus/*
+
+config/sublime-text-3/Cache/*
+config/sublime-text-3/Index/*
+config/sublime-text-3/Installed\ Packages/*
+config/sublime-text-3/Local/*
+      

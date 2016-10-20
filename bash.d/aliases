@@ -10,14 +10,17 @@ alias du='du -hS'
 alias l='clear'
 alias c='cat'
 alias x='exit'
+alias s='sublime'
 alias i='sudo -i'
 alias r='xrandr --output eDP1 --mode 2048x1152 --auto'
-alias refresh='xrandr --output eDP1 --mode 2560x1440 --auto'
+alias refresh='xrandr --output eDP1 --mode 2048x1152 --auto'
+alias bb="cd $HOME/.bash.d"
+alias cd..='cd ..'
 
 # pacman
 alias update='sudo pacman -Sy'
 alias upgrade='sudo pacman -Syuu'
-alias install='packer --noedit --noconfirm -S'
+alias install='packer --noedit --noconfirm'
 alias remove='sudo pacman -Rsc'
 alias search='packer -Ss'
 alias pacman='sudo pacman'
@@ -25,13 +28,15 @@ alias pinfo='packer -Si'
 # packer
 alias packer='packer --noedit'
 
-# nano
-alias xbash='nano /home/loki/.bashrc && source /home/loki/.bashrc && echo "BASH Reloaded"'
-alias b='nano /home/loki/.bashrc && source /home/loki/.bashrc && echo "BASH Reloaded"'
+# subl3
+alias xbash='subl3 /home/loki/.bashrc && source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias b='subl3 /home/loki/.bashrc && source /home/loki/.bashrc && echo "BASH Reloaded"'
 alias xxbash='source /home/loki/.bashrc && echo "BASH Reloaded"'
-alias xaliases='nano /home/loki/.bash_aliases && source /home/loki/.bashrc && echo "BASH Reloaded"'
-alias a='nano /home/loki/.bash.d/aliases && source /home/loki/.bashrc && echo "BASH Reloaded"'
-alias xnanorc='sudo nano /etc/nanorc'
+alias xb='source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias xaliases='subl3 /home/loki/.bash_aliases && source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias a='subl3 /home/loki/.bash.d/aliases && source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias nanorc='sudo subl3 /etc/nanorc'
+alias h='sudo subl3 /etc/hosts'
 
 # commands
 alias visudo='sudo visudo'
@@ -44,8 +49,8 @@ alias cp='sudo cp -av'
 alias mv='sudo mv'
 alias rm='sudo rm -r'
 alias ln='sudo ln -s'
-alias mkdir='sudo mkdir -p'
-alias touch='sudo touch'
+alias mkdir='mkdir -p'
+alias touch='touch'
 
 # File Permissions
 alias chmod='sudo chmod -R'
@@ -70,28 +75,27 @@ alias n='cd /etc/nginx'
 alias t='sudo nginx -t; sudo systemctl restart nginx.service'
 alias www='cd /var/www/'
 alias log='cd /var/log/nginx/'
-alias k='nano /home/loki/.ssh/authorized_keys'
-alias kn='nano /home/loki/.ssh/known_hosts'
-alias sshd='sudo nano /etc/ssh/sshd_config; sudo systemctl restart sshd.service; echo "SSH Reloaded"'
+alias k='subl3 /home/loki/.ssh/authorized_keys'
+alias kn='subl3 /home/loki/.ssh/known_hosts'
+alias sshd='sudo subl3 /etc/ssh/sshd_config; sudo systemctl restart sshd.service; echo "SSH Reloaded"'
 
 
 
 
 
-# nano
-alias xapt='sudo nano /etc/apt/sources.list'
-alias xaliases='nano ~/.dotfiles/bash.d/aliases && echo "reloading bash" && source ~/.bashrc'
-alias xi3='nano ~/.i3/config'
-alias xtermite='nano ~/.config/termite/config'
-alias nanorc='sudo nano /etc/nanorc'
-alias sshd='sudo nano /etc/ssh/sshd_config && echo "restarting sshd" && sleep 2 && sudo service ssh restart'
-alias xkeys='nano ~/.ssh/authorized_keys'
-alias xnet='sudo nano /etc/network/interfaces'
-alias xtime='sudo nano /etc/ntp.conf'
-alias xee='sudo nano /etc/ee/ee.conf'
-alias xtables='sudo nano /etc/iptables.conf'
-alias xfunctions='sudo nano /var/www/affinityskin.com.au/htdocs/wp-content/themes/x-child/functions.php'
-alias xgrub='sudo nano /etc/default/grub && sudo update-grub'
+# subl3
+alias xapt='sudo subl3 /etc/apt/sources.list'
+alias xaliases='subl3 ~/.dotfiles/bash.d/aliases && echo "reloading bash" && source ~/.bashrc'
+alias xi3='subl3 ~/.i3/config'
+alias xtermite='subl3 ~/.config/termite/config'
+alias sshd='sudo subl3 /etc/ssh/sshd_config && echo "restarting sshd" && sleep 2 && sudo service ssh restart'
+alias xkeys='subl3 ~/.ssh/authorized_keys'
+alias xnet='sudo subl3 /etc/network/interfaces'
+alias xtime='sudo subl3 /etc/ntp.conf'
+alias xee='sudo subl3 /etc/ee/ee.conf'
+alias xtables='sudo subl3 /etc/iptables.conf'
+alias xfunctions='sudo subl3 /var/www/affinityskin.com.au/htdocs/wp-content/themes/x-child/functions.php'
+alias xgrub='sudo subl3 /etc/default/grub && sudo update-grub'
 alias xbash="source ~/.bashrc"
 
 # commands
@@ -146,6 +150,8 @@ alias nreload='sudo service nginx reload'
 alias epsilon='TERM=xterm ssh -p 170 loki@14.202.176.121'
 alias proxima='TERM=xterm ssh -p 200 loki@14.202.176.121'
 alias omega='TERM=xterm ssh -p 250 loki@14.202.176.121'
+alias mediahubzn='TERM=xterm ssh -p 150 loki@14.202.176.121'
 alias cerberus='TERM=xterm ssh loriezn@cerberus.seedboxes.cc'
 
 
+alias veewee='bundle exec veewee'

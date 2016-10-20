@@ -3,7 +3,8 @@
 	"Seti_ClosedFolder_dots": false,
 	"Seti_ClosedFolder_remove": true,
 	"Seti_ClosedFolder_same": true,
-	"Seti_SB_big": true,
+	"Seti_SB_big": false,
+	"Seti_SB_med": true,
 	"Seti_accent": true,
 	"Seti_accent_yellow": true,
 	"Seti_alt_tree_row": true,
@@ -23,7 +24,7 @@
 	"Seti_yellow_tabclose": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Colorsublime - Themes/Harper.tmTheme",
-	"font_size": 15,
+	"font_size": 13,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
