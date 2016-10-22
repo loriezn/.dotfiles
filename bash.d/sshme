@@ -1,1 +1,1 @@
-alias sshme="ssh-add ~/.ssh/*.sshkey"
+alias sshme="eval '$(ssh-agent -s)' && ssh-add ~/.ssh/id_rsa"

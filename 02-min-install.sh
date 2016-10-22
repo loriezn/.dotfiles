@@ -24,7 +24,6 @@ sudo pacman -S base-devel fakeroot jshon expac \
   pavucontrol \
   imagemagick \
   dunst \
-  xorg \
   python \
   python-pip \
   python2-pip \

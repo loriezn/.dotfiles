@@ -1,6 +1,6 @@
 [options]
 font = Hack 12
-browser = firefox
+browser = chromium
 clickable_url = true
 dynamic_title = true
 geometry = 3200x1800

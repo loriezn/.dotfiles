@@ -1,24 +1,16 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Installing prerequisites for apacman..."
+echo "Installing prerequisites for packer..."
 sudo pacman -S base-devel fakeroot jshon expac
 
-echo "Installing apacman..."
-mkdir /tmp/tmp-apacman
-cd /tmp/tmp-apacman
-wget https://aur.archlinux.org/packages/ap/apacman/PKGBUILD
-makepkg
-sudo pacman --noconfirm -U *.tar.xz
-cd -
-
 echo "Installing base packages..."
-apacman --noconfirm --noedit -S \
-  termite-git \
-  bash-completion
+packer --noconfirm --noedit -S \
+  bash-completion \
+  termite-git
 
 echo "Installing Python dependencies..."
-apacman --noconfirm --noedit -S \
+packer --noconfirm --noedit -S \
   python-basiciw \
   python-netifaces \
   python-yaml \
@@ -27,7 +19,7 @@ apacman --noconfirm --noedit -S \
   python2-suds
 
 echo "Installing window manager dependencies..."
-apacman --noconfirm --noedit -S \
+packer --noconfirm --noedit -S \
   xcb-util-keysyms \
   xcb-util-wm \
   xcb-util-cursor \
@@ -36,7 +28,8 @@ apacman --noconfirm --noedit -S \
   libev
 
 echo "Installing tools..."
-apacman --noconfirm --noedit -S \
+packer --noconfirm --noedit -S \
+  i3-gaps-git \
   i3lock \
   i3blocks-gaps-git \
   gsimplecal \
@@ -45,9 +38,22 @@ apacman --noconfirm --noedit -S \
   thunderbird-lightning-bin \
   feh \
   acpi \
+  xorg \
+  xorg-xinit \
+  xorg-server-utils \
   xdotool \
+  xf86-video-intel \
+  mesa-libgl \
+  lib32-mesa-libgl \
   pulseaudio-ctl \
   pavucontrol \
+  gnome-keyring \
+  alsa-tools \
+  alsa-utils 
+
+packer --noconfirm --noedit -S \
+  networkmanager \
+  nm-connection-editor \
   network-manager-applet \
   networkmanager-openvpn \
   imagemagick \
@@ -98,16 +104,17 @@ apacman --noconfirm --noedit -S \
   pulseaudio-bluetooth \
   blueman \
   redshift \
-  google-chrome \
   firefox \
+  chromium \
+  sublime-text-dev \
   lm_sensors
 
 echo "Installing some python stuff..."
-apacman --noconfirm --noedit -S \
+packer --noconfirm --noedit -S \
   python-pillow \
   python-urllib3
 
 echo "Installing some perl stuff..."
-apacman --noconfirm --noedit -S \
+packer --noconfirm --noedit -S \
   perl-anyevent-i3 \
   perl-json-xs \

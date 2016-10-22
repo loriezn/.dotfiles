@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 nmkill(){
 sudo killall -9 nm-applet;
 nm-applet & clear && clear
