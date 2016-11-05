@@ -1,0 +1,4 @@
+nmkill(){
+sudo killall -9 nm-applet;
+nm-applet & clear && clear
+}

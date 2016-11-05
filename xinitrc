@@ -18,6 +18,7 @@ xset -dpms
 xset s noblank
 
 xset r rate 200 20
+xrandr --output eDP1 --mode 2560x1440 --primary --auto 
 
 setxkbmap en
 setxkbmap -option ctrl:nocaps

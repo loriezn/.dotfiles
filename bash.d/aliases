@@ -43,6 +43,7 @@ alias visudo='sudo visudo'
 alias service='sudo service'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot'
+alias qq='cmatrix -a -C yellow -b -s -u 7'
 
 # File Utils
 alias cp='sudo cp -av'
@@ -148,6 +149,7 @@ alias ntest='nginx -t'
 alias nreload='sudo service nginx reload'
 
 # SSH Locations
+alias alpha='TERM=xterm ssh -p 160 loki@14.202.176.121'
 alias epsilon='TERM=xterm ssh -p 170 loki@14.202.176.121'
 alias delta='TERM=xterm ssh -p 180 loki@14.202.176.121'
 alias proxima='TERM=xterm ssh -p 200 loki@14.202.176.121'

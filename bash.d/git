@@ -9,12 +9,13 @@ alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset \
 
 ###GIT INIT###
 gi(){
+    GITUSER=loriezn
+    GITREPO="$*"
+
     # Initalize a fresh online Github Repository.
     if [ -z "$GITREPO" ]; then
         echo "Great Scott! You forgot to tell me the repo's name."
     else
-        GITUSER=anchortenant
-        GITREPO="$*"
         touch README.md
         git init
         git add README.md

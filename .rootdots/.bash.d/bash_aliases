@@ -1,46 +1,111 @@
-# Shortcuts
-alias ll='ls -lh'
-alias la='ls -lhA'
-alias l='clear'
-alias cls='clear'
-alias c='clear'
-alias x='exit'
-alias q='exit'
-alias i='sudo -i'
+#!/usr/bin/env bash
 
-# apt-get
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade -y'
-alias dist-upgrade='sudo apt-get dist-upgrade -y'
-alias install='sudo apt-get install -y'
-alias install-ee='wget -qO ee rt.cx/ee && sudo bash ee'
-alias ee='sudo ee'
-alias remove='sudo apt-get remove --purge -y'
-alias clean='sudo apt-get autoclean -y && sudo apt-get autoremove -y'
-alias search='apt-cache search'
+# Shortcuts
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias grep='grep --color=tty -d skip'
+alias df='df -h'                          # human-readable sizes
+alias du='du -hS'
+alias l='clear'
+alias c='cat'
+alias x='exit'
+alias s='sublime'
+alias i='sudo -i'
+alias r='xrandr --output eDP1 --mode 2048x1152 --auto'
+alias refresh='xrandr --output eDP1 --mode 2048x1152 --auto'
+alias bb="cd $HOME/.bash.d"
+alias cd..='cd ..'
+
+# pacman
+alias update='sudo pacman -Sy'
+alias upgrade='sudo pacman -Syuu'
+alias install='packer --noedit --noconfirm'
+alias remove='sudo pacman -Rsc'
+alias search='packer -Ss'
+alias pacman='sudo pacman'
+alias pinfo='packer -Si'
+# packer
+alias packer='packer --noedit'
 
 # nano
-alias aliases='nano ~/.bash.d/bash_aliases'
-alias xapt='nano /etc/apt/sources.list'
-alias xaliases='nano ~/00-build-scripts/dotfiles/.bash.d/bash_aliases'
-alias aa='nano ~/.bash_aliases'
-alias bashrc='nano ~/.bashrc'
+alias xbash='nano /home/loki/.bashrc && source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias b='nano /home/loki/.bashrc && source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias xxbash='source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias xb='source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias xaliases='nano /home/loki/.bash_aliases && source /home/loki/.bashrc && echo "BASH Reloaded"'
+alias a='nano /home/loki/.bash.d/aliases && source /home/loki/.bashrc && echo "BASH Reloaded"'
 alias nanorc='sudo nano /etc/nanorc'
-alias sshd='sudo nano /etc/ssh/sshd_config'
-alias sshkeys='nano ~/.ssh/authorized_keys'
-alias network='sudo nano /etc/network/interfaces'
-alias sources='sudo nano /etc/apt/sources.list'
-alias ntp='sudo nano /etc/ntp.conf'
-alias sysctld='sudo nano /etc/sysctl.conf'
-alias nanoee='sudo nano /etc/ee/ee.conf'
-alias hosta='sudo nano /etc/hosts.allow'
-alias hostd='sudo nano /etc/hosts.deny'
-alias touch='sudo touch'
-alias iptables='sudo nano /etc/iptables.conf'
-alias xfunctions='sudo nano /var/www/affinityskin.com.au/htdocs/wp-content/themes/x-child/functions.php'
-alias ssl='sudo nano /etc/nginx/conf.d/force-ssl-affinityskin.com.au.conf'
+alias h='sudo nano /etc/hosts'
 
 # commands
+alias visudo='sudo visudo'
+alias service='sudo service'
+alias shutdown='sudo shutdown now'
+alias reboot='sudo reboot'
+alias qq='cmatrix -a -C yellow -b -s -u 7'
+
+# File Utils
+alias cp='sudo cp -av'
+alias mv='sudo mv'
+alias rm='sudo rm -r'
+alias ln='sudo ln -s'
+alias mkdir='mkdir -p'
+alias touch='touch'
+
+# File Permissions
+alias chmod='sudo chmod -R'
+alias chown='sudo chown -R $USER:$USER'
+alias rchown='sudo chown -R root:root'
+alias rchmod='sudo $HOME/.scripts/./rchmod.sh "$1"' 
+
+
+# Compression
+alias cat='sudo cat'
+alias tail='sudo tail'
+alias unzip='sudo unzip'
+
+# Networking
+alias ufw='sudo ufw'
+alias ifconfig='sudo ifconfig'
+alias ipwan='dig +short myip.opendns.com @resolver1.opendns.com'
+alias iptables='sudo iptables'
+alias wpscan='sudo ruby /home/loki/wpscan/wpscan.rb'
+
+
+# Nginx
+alias nginx='sudo nginx'
+alias n='cd /etc/nginx'
+alias t='sudo nginx -t; sudo systemctl restart nginx.service'
+alias www='cd /var/www/'
+alias log='cd /var/log/nginx/'
+alias k='nano /home/loki/.ssh/authorized_keys'
+alias kn='nano /home/loki/.ssh/known_hosts'
+alias sshd='sudo nano /etc/ssh/sshd_config; sudo systemctl restart sshd.service; echo "SSH Reloaded"'
+
+
+
+
+
+# nano
+alias xapt='sudo nano /etc/apt/sources.list'
+alias xaliases='nano ~/.dotfiles/bash.d/aliases && echo "reloading bash" && source ~/.bashrc'
+alias xi3='nano ~/.i3/config'
+alias xtermite='nano ~/.config/termite/config'
+alias sshd='sudo nano /etc/ssh/sshd_config && echo "restarting sshd" && sleep 2 && sudo service ssh restart'
+alias xkeys='nano ~/.ssh/authorized_keys'
+alias xnet='sudo nano /etc/network/interfaces'
+alias xtime='sudo nano /etc/ntp.conf'
+alias xee='sudo nano /etc/ee/ee.conf'
+alias xtables='sudo nano /etc/iptables.conf'
+alias xfunctions='sudo nano /var/www/affinityskin.com.au/htdocs/wp-content/themes/x-child/functions.php'
+alias xgrub='sudo nano /etc/default/grub && sudo update-grub'
+alias xbash="source ~/.bashrc"
+
+# commands
+alias gparted='sudo gparted &'
+alias pip='sudo -H pip'
+alias pip2='sudo -H pip2'
 alias visudo='sudo visudo'
 alias service='sudo service'
 alias ufw='sudo ufw'
@@ -49,22 +114,17 @@ alias reboot='sudo reboot'
 alias nginx='sudo nginx'
 alias cp='sudo cp -av'
 alias mv='sudo mv'
-alias rm='sudo rm -r'
-alias chown='sudo chown -R'
-alias xchown='sudo chown -R www-data:www-data *'
-alias chmod='sudo chmod -R'
-alias nano='sudo nano'
-alias ee='sudo ee'
+alias rm='sudo rm -rf'
+
 alias wpscan='sudo ruby ~/wpscan/wpscan.rb'
 alias ifconfig='sudo ifconfig'
 alias cat='sudo cat'
 alias tail='sudo tail'
-alias lynis='sudo lynis'
-alias iptables='sudo iptables'
-alias mkdir='sudo mkdir -p'
+alias mount='sudo mount'
+alias umount='sudo umount'
+alias chroot='sudo chroot'
 alias ln='sudo ln -s'
 alias unzip='sudo unzip'
-alias xmnginx='service nginx restart'
 
 # locations
 alias www='cd /var/www'
@@ -81,4 +141,21 @@ alias ntest='nginx -t'
 alias nreload='sudo service nginx reload'
 alias nstop='sudo service nginx stop'
 alias nsstart='sudo service nginx start'
-alias sigma='ssh -p 221 loki@192.168.0.21'
+alias ipwan='curl ifconfig.me/ip'
+
+alias log='cd /var/log'
+alias xnginx='cd /etc/nginx'
+alias ntest='nginx -t'
+alias nreload='sudo service nginx reload'
+
+# SSH Locations
+alias alpha='TERM=xterm ssh -p 160 loki@14.202.176.121'
+alias epsilon='TERM=xterm ssh -p 170 loki@14.202.176.121'
+alias delta='TERM=xterm ssh -p 180 loki@14.202.176.121'
+alias proxima='TERM=xterm ssh -p 200 loki@14.202.176.121'
+alias omega='TERM=xterm ssh -p 250 loki@14.202.176.121'
+alias mediahubzn='TERM=xterm ssh -p 150 loki@14.202.176.121'
+alias cerberus='TERM=xterm ssh loriezn@cerberus.seedboxes.cc'
+
+
+alias veewee='bundle exec veewee'

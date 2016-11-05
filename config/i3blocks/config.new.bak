@@ -1,10 +1,9 @@
 separator=false
-separator_block_width=15
+separator_block_width=5
 border_top=0
 border_left=0
 border_right=0
 border_bottom=4
-
 
 [output]
 command=$HOME/.scripts/monitor.sh
@@ -14,7 +13,7 @@ signal=4
 [updates]
 command=$HOME/.scripts/updates.sh
 interval=60
-signal=2
+signal=3
 urgent=true
 
 #[window]
@@ -43,12 +42,6 @@ label= 
 command=echo "$($HOME/.scripts/temperature.sh 'Core 0') $($HOME/.scripts/temperature.sh 'Core 1') "
 interval=5
 border=#b16286
-
-[email]
-label= 
-command=$HOME/.scripts/email
-interval=300
-min_width= 99
 
 [wireless]
 label=    

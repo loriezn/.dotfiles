@@ -132,115 +132,115 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
 #bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 #bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.scripts/volume_control.py down 5
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.scripts/volume_control.py up 5
-bindsym XF86AudioMute exec --no-startup-id $HOME/.scripts/volume_control.py toggle
-bindsym $mod+Shift+v exec --no-startup-id "killall pavucontrol; $HOME/.scripts/fullscreen_wrap.sh pavucontrol -t 3"
+#bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.scripts/volume_control.py down 5
+#bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.scripts/volume_control.py up 5
+#bindsym XF86AudioMute exec --no-startup-id $HOME/.scripts/volume_control.py toggle
+#bindsym $mod+Shift+v exec --no-startup-id "killall pavucontrol; $HOME/.scripts/fullscreen_wrap.sh pavucontrol -t 3"
 
-bindsym XF86MonBrightnessDown exec --no-startup-id ${HOME}/.scripts/backlight.sh -dec 10
-bindsym XF86MonBrightnessUp exec --no-startup-id ${HOME}/.scripts/backlight.sh -inc 10
+#bindsym XF86MonBrightnessDown exec --no-startup-id ${HOME}/.scripts/backlight.sh -dec 10
+#bindsym XF86MonBrightnessUp exec --no-startup-id ${HOME}/.scripts/backlight.sh -inc 10
 
-bindsym $mod+Shift+w exec --no-startup-id $editor --name "__nmtui" -e "nmtui-connect"
+#bindsym $mod+Shift+w exec --no-startup-id $editor --name "__nmtui" -e "nmtui-connect"
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-# screenshot
-bindsym --release Print exec --no-startup-id "maim -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
-bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
+## screenshot
+#bindsym --release Print exec --no-startup-id "maim -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
+#bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
 
-bindsym $mod+n exec --no-startup-id thunar
+#bindsym $mod+n exec --no-startup-id thunar
 
-set $mode_resize resize
-bindsym $mod+r mode "$mode_resize"
-mode "$mode_resize" {
-    bindsym Left resize shrink width 10 px or 1 ppt
-    bindsym Down resize grow height 10 px or 1 ppt
-    bindsym Up resize shrink height 10 px or 1 ppt
-    bindsym Right resize grow width 10 px or 1 ppt
+#set $mode_resize resize
+#bindsym $mod+r mode "$mode_resize"
+#mode "$mode_resize" {
+#    bindsym Left resize shrink width 10 px or 1 ppt
+#    bindsym Down resize grow height 10 px or 1 ppt
+#    bindsym Up resize shrink height 10 px or 1 ppt
+#    bindsym Right resize grow width 10 px or 1 ppt
 
-    bindsym Shift+Left resize shrink width 20 px or 5 ppt
-    bindsym Shift+Down resize grow height 20 px or 5 ppt
-    bindsym Shift+Up resize shrink height 20 px or 5 ppt
-    bindsym Shift+Right resize grow width 20 px or 5 ppt
+#    bindsym Shift+Left resize shrink width 20 px or 5 ppt
+#    bindsym Shift+Down resize grow height 20 px or 5 ppt
+#    bindsym Shift+Up resize shrink height 20 px or 5 ppt
+#    bindsym Shift+Right resize grow width 20 px or 5 ppt
 
-    bindsym s mode "default", exec --no-startup-id $HOME/.scripts/slopsize.sh
+#    bindsym s mode "default", exec --no-startup-id $HOME/scripts/slopsize.sh
 
-    bindsym 1 mode "default", resize set 1000 600
-    bindsym 2 mode "default", resize set 1500 600
-    bindsym 3 mode "default", resize set 1200 1000
+#    bindsym 1 mode "default", resize set 1000 600
+#    bindsym 2 mode "default", resize set 1500 600
+#    bindsym 3 mode "default", resize set 1200 1000
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
-set $mode_gaps gaps
-set $mode_gaps_outer outer gaps
-set $mode_gaps_inner inner gaps
-bindsym $mod+Shift+g mode "$mode_gaps"
-mode "$mode_gaps" {
-    bindsym o      mode "$mode_gaps_outer"
-    bindsym i      mode "$mode_gaps_inner"
+#set $mode_gaps gaps
+#set $mode_gaps_outer outer gaps
+#set $mode_gaps_inner inner gaps
+#bindsym $mod+Shift+g mode "$mode_gaps"
+#mode "$mode_gaps" {
+#    bindsym o      mode "$mode_gaps_outer"
+#    bindsym i      mode "$mode_gaps_inner"
 
-    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
-    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+#    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+#    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
-mode "$mode_gaps_inner" {
-    bindsym plus  gaps inner current plus 5
-    bindsym minus gaps inner current minus 5
-    bindsym 0     mode "default", gaps inner current set 0
-    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+#mode "$mode_gaps_inner" {
+#    bindsym plus  gaps inner current plus 5
+#    bindsym minus gaps inner current minus 5
+#    bindsym 0     mode "default", gaps inner current set 0
+#    bindsym d     mode "default", gaps inner current set $default_gaps_inner
 
-    bindsym Shift+plus  gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0     mode "default", gaps inner all set 0
-    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+#    bindsym Shift+plus  gaps inner all plus 5
+#    bindsym Shift+minus gaps inner all minus 5
+#    bindsym Shift+0     mode "default", gaps inner all set 0
+#    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
-mode "$mode_gaps_outer" {
-    bindsym plus  gaps outer current plus 5
-    bindsym minus gaps outer current minus 5
-    bindsym 0     mode "default", gaps outer current set 0
-    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+#mode "$mode_gaps_outer" {
+#    bindsym plus  gaps outer current plus 5
+#    bindsym minus gaps outer current minus 5
+#    bindsym 0     mode "default", gaps outer current set 0
+#    bindsym d     mode "default", gaps outer current set $default_gaps_outer
 
-    bindsym Shift+plus  gaps outer all plus 5
-    bindsym Shift+minus gaps outer all minus 5
-    bindsym Shift+0     mode "default", gaps outer all set 0
-    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+#    bindsym Shift+plus  gaps outer all plus 5
+#    bindsym Shift+minus gaps outer all minus 5
+#    bindsym Shift+0     mode "default", gaps outer all set 0
+#    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
-set $mode_brightness brightness
-bindsym $mod+Shift+b mode "$mode_brightness"
-mode "$mode_brightness" {
-    bindsym plus  exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -inc 10
-    bindsym minus exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -dec 10
-    bindsym Shift+plus  exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -inc 1
-    bindsym Shift+minus exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -dec 1
+#set $mode_brightness brightness
+#bindsym $mod+Shift+b mode "$mode_brightness"
+#mode "$mode_brightness" {
+#    bindsym plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 10
+#    bindsym minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 10
+#    bindsym Shift+plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 1
+#    bindsym Shift+minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 1
 
-    bindsym 0     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 100
-    bindsym 1     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 10
-    bindsym 2     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 20
-    bindsym 3     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 30
-    bindsym 4     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 40
-    bindsym 5     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 50
-    bindsym 6     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 60
-    bindsym 7     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 70
-    bindsym 8     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 80
-    bindsym 9     mode "default", exec --no-startup-id ${HOME}/.scripts/backlight.sh -time 50 -set 90
+#    bindsym 0     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 100
+#    bindsym 1     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 10
+#    bindsym 2     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 20
+#    bindsym 3     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 30
+#    bindsym 4     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 40
+#    bindsym 5     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 50
+#    bindsym 6     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 60
+#    bindsym 7     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 70
+#    bindsym 8     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 80
+#    bindsym 9     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 90
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
 # fix graphics glitch
 new_window none
@@ -322,6 +322,6 @@ bindsym $MOD+Shift+f exec --no-startup-id firefox
 bindsym $MOD+Control+s exec --no-startup-id sublime
 bindsym $MOD+c exec $editor
 bindsym $MOD+Control+c exec --no-startup-id chromium
-#exec_always --no-startup-id "pgrep --exact xev || xev -root -event randr | grep --line-buffered ScreenChangeNotify | while read change; do pkill-RTMIN+4 i3blocks; done"
+exec_always --no-startup-id "pgrep --exact xev || xev -root -event randr | grep --line-buffered ScreenChangeNotify | while read change; do pkill-RTMIN+4 i3blocks; done"
 
 

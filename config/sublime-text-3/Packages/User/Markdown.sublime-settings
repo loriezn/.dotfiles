@@ -27,14 +27,14 @@
 	"rulers": [],
 
 	// Line
-	"line_numbers": false,
+	"line_numbers": true,
 	"highlight_line": false,
 	"line_padding_top": 2,
 	"line_padding_bottom": 2,
 
 	// Caret
-	"caret_style": "wide",   // "wide" is deprecated starting with ST Build 3057.
-	                         // In the future, this line will be replaced with:
+	"caret_style": "solid",   // "wide" is deprecated starting with ST Build 3057.
+	"caret_extra_width": 1,                         // In the future, this line will be replaced with:
 	                         //     "caret_style": "solid",
 	                         //     "caret_extra_width": 1,
 	// These will work only in ST Build 3057 and later.
@@ -59,7 +59,7 @@
 	// Distraction free mode improvements. In order for these to work, you have to install
 	// FullScreenStatus plugin: https://github.com/maliayas/SublimeText_FullScreenStatus
 	"mde.distraction_free_mode": {
-		"mde.keep_centered": true
+		"mde.keep_centered": false
 	},
 	
 	"mde.lint": {
