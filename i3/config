@@ -247,7 +247,7 @@ new_window none
 for_window [class=(?i)termite] border normal 5
 for_window [class=(?i)sublime] border pixel 5
 for_window [class=(?i)firefox] border pixel 5
-for_window [class=(?i)chromium] border pixel 5
+for_window [class=(?i)chrome] border pixel 5
 for_window [class=(?i)thunar] border pixel 5
 
 for_window [window_role="pop-up"] floating enable
@@ -314,14 +314,14 @@ exec --no-startup-id solaar &
 exec --no-startup-id xrandr --output eDP1 --mode 2048x1152 --auto --primary && exec --no-startup-id restart
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/octocat.jpg
 exec --no-startup-id $editor
-exec --no-startup-id chromium
+exec --no-startup-id chrome
 exec --no-startup-id sublime
 
 # CUSTOM COMMANDS
 bindsym $MOD+Shift+f exec --no-startup-id firefox
 bindsym $MOD+Control+s exec --no-startup-id sublime
 bindsym $MOD+c exec $editor
-bindsym $MOD+Control+c exec --no-startup-id chromium
+bindsym $MOD+Control+c exec --no-startup-id chrome
 #exec_always --no-startup-id "pgrep --exact xev || xev -root -event randr | grep --line-buffered ScreenChangeNotify | while read change; do pkill-RTMIN+4 i3blocks; done"
 
 

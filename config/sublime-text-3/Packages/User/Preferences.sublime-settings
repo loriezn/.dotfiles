@@ -26,7 +26,7 @@
 	"Seti_yellow_tabclose": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/SublimeLinter/Harper (SL).tmTheme",
-	"font_size": 12,
+	"font_size": 13,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[

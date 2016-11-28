@@ -24,6 +24,7 @@ export HISTCONTROL=ignoreboth
 export JAVA_FONTS=/usr/share/fonts/TTF
 export EDITOR=/usr/bin/nano
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export TERM=xterm
 
 bind '"\eOA": history-search-backward'
 bind '"\e[A": history-search-backward'
